@@ -4,7 +4,7 @@ HealthBuddy is a virtual healthcare assistant that provides general guidance bas
 
 ## Preview
 
-![Preview](./preview.gif)
+![Preview](./res/preview.gif)
 
 ---
 
