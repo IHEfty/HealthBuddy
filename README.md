@@ -72,4 +72,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries, please reach out to [IH Efty](mailto:youremail@example.com).
+For any inquiries, please reach out to [IH Efty](mailto:pd.e.contact.me@gmail.com).
