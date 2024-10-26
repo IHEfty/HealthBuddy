@@ -7,7 +7,8 @@ import re
 
 nlp = spacy.load("en_core_web_sm")
 
-symptom_responses = {
+#symptom_responses
+symp_res = {
     "fever": [
         "It looks like you might have a fever. Make sure you're staying hydrated and getting plenty of rest. Keep an eye on your temperature, and if it goes over 102°F or if your symptoms stick around, it’s a good idea to consult a healthcare provider. Would you like more tips on managing a fever?",
         "A fever can be your body’s way of fighting something off. Try to stay cool and drink lots of fluids. If it doesn’t go down, it might be wise to seek medical attention. Want advice on how to reduce your fever?"
@@ -115,7 +116,7 @@ symptom_responses = {
 }
 
 def get_symptom_response(symptom):
-    responses = symptom_responses.get(symptom)
+    responses = symp_res.get(symptom)
     if responses:
         return random.choice(responses)
     return "I'm not sure how to help with that. Can you provide more details?"
@@ -140,7 +141,7 @@ def with_greeting(response):
     return f"{greeting} {response}"
 
 def get_closest_symptom(user_input):
-    best_match, score = process.extractOne(user_input, symptom_responses.keys(), scorer=fuzz.partial_ratio)
+    best_match, score = process.extractOne(user_input, symp_res.keys(), scorer=fuzz.partial_ratio)
     return best_match if score >= 70 else None  
 
 def extract_name(user_input):
@@ -161,7 +162,7 @@ def generate_response(user_input):
                 "I'm proud to be part of their project! Let me know how I can assist further.")
 
     if found_symptom:
-        return random.choice(symptom_responses[found_symptom])
+        return random.choice(symp_res[found_symptom])
         
     elif any(greeting in user_input for greeting in ["hello", "hi", "hey"]):
         return with_greeting("")
